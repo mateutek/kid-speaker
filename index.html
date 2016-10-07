@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Speech</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="speech">
+
+    <div class="container" ng-controller="MainCtrl">
+        <h1>Kid Speaker</h1>
+        <input type="text" ng-model="text" class="text">
+        <a href="#" ng-click="speak()" class="play__btn"><i class="fa fa-play-circle"></i></a>
+    </div>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/main.controller.js"></script>
+</body>
+</html>

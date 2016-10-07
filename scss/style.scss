@@ -1,0 +1,50 @@
+@import "../bower_components/font-awesome/scss/font-awesome";
+@import 'https://fonts.googleapis.com/css?family=Indie+Flower|Open+Sans';
+
+$primary-color:#6A1B9A;
+
+*{
+  box-sizing: border-box;
+}
+body{
+  padding: 0;
+  margin:0;
+}
+
+.container{
+  width: 1200px;
+  margin:0 auto;
+  text-align: center;
+  h1{
+    font-family: "Indie Flower","Helvatica",sans-serif;
+    font-size: 3em;
+    margin-bottom:5px;
+  }
+}
+
+.text{
+  display:block;
+  width: 100%;
+  font-size: 2em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  color:$primary-color;
+  padding: 10px;
+  font-family: "Open Sans",sans-serif;
+  &:focus{
+    outline: none;
+    border-color:$primary-color ;
+  }
+}
+
+.play__btn{
+  color: $primary-color;
+  &:hover{
+    color: #AB47BC;
+  }
+  .fa{
+    font-size:8em;
+    transition:all 0.3s;
+  }
+}

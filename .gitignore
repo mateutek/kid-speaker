@@ -47,8 +47,8 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 ### Yeoman template
-node_modules/
-bower_components/
+#node_modules/
+#bower_components/
 *.log
 
 build/

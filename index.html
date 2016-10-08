@@ -8,9 +8,27 @@
 <body ng-app="speech">
 
     <div class="container" ng-controller="MainCtrl">
-        <h1>Kid Speaker</h1>
-        <input type="text" ng-model="text" class="text">
-        <a href="#" ng-click="speak()" class="play__btn"><i class="fa fa-play-circle"></i></a>
+        <div class="main">
+            <h1>{{retypeText}}</h1>
+            <div class="input-container">
+                <input type="text" ng-model="text" class="text" ng-keyup="$event.keyCode == 13 && speak()">
+                <a href="#" ng-click="speak()" class="play__btn"><i class="fa fa-play-circle"></i></a>
+            </div>
+        </div>
+        <div class="letters">
+            <ul class="inline__list letters__list">
+                <li class="inline__list--item letter" ng-repeat="letter in lettersList" ng-click="selectLetter($index)" ng-class="{'active':$index==selectedLetter}">
+                   {{letter}} {{letter|uppercase}}
+                </li>
+            </ul>
+        </div>
+        <div class="iconography">
+            <ul class="inline__list icons__list">
+                <li class="inline__list--item  icon" ng-repeat="icon in iconList" ng-click="selectIco($index)" ng-class="{'active':$index==selectedIcon}">
+                    <i class="fa" ng-class="icon.fa"></i>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <script src="bower_components/angular/angular.min.js"></script>

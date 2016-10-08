@@ -9,29 +9,34 @@ $primary-color:#6A1B9A;
 body{
   padding: 0;
   margin:0;
+  font-family: "Open Sans",sans-serif;
 }
 
 .container{
   width: 1200px;
   margin:0 auto;
-  text-align: center;
+
   h1{
-    font-family: "Indie Flower","Helvatica",sans-serif;
-    font-size: 3em;
+    font-size: 2em;
     margin-bottom:5px;
   }
+  .main{
+    text-align: center;
+  }
 }
-
+.input-container{
+  margin-bottom: 20px;
+}
 .text{
-  display:block;
-  width: 100%;
+  display:inline-block;
+  width: 90%;
   font-size: 2em;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-bottom: 20px;
   color:$primary-color;
   padding: 10px;
   font-family: "Open Sans",sans-serif;
+  vertical-align: text-bottom;
   &:focus{
     outline: none;
     border-color:$primary-color ;
@@ -39,12 +44,79 @@ body{
 }
 
 .play__btn{
+  display: inline-block;
   color: $primary-color;
   &:hover{
     color: #AB47BC;
   }
   .fa{
-    font-size:8em;
+    font-size:5em;
     transition:all 0.3s;
+  }
+}
+
+.inline__list{
+  display: inline-block;
+  text-align: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  &--item{
+    display: inline-block;
+    font-size: 5em;
+    padding: 5px 10px;
+    color: $primary-color;
+    position: relative;
+
+    &:hover{
+      cursor: pointer;
+      color:#66BB6A;
+    }
+    &.active{
+      color:#2E7D32;
+    }
+  }
+}
+
+.letters__list{
+  margin-bottom: 20px;
+  .letter{
+    text-align: center;
+    font-size: 4em;
+    &:nth-child(odd){
+      color: #1E88E5;
+      &:hover{
+        cursor: pointer;
+        color:#66BB6A;
+      }
+      &.active{
+        color:#2E7D32;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : 992px) {
+  .container{
+    width: 100%;
+  }
+  .letters__list{
+    .letter{
+      font-size: 2em;
+    }
+  }
+  .inline__list{
+    &--item{
+      font-size:3.5em ;
+    }
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+  .inline__list{
+    &--item{
+      font-size:1.2em ;
+    }
   }
 }

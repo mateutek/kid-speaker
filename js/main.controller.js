@@ -4,6 +4,7 @@ angular.module('speech')
     .controller('MainCtrl',['$scope',function($scope){
         $scope.text = 'Witaj!';
         $scope.msg = new SpeechSynthesisUtterance();
+        $scope.msg.lang = 'pl-PL';
         $scope.selectedIcon = -1;
         $scope.iconList = [
             {fa:'fa-car',text:'Samochód'},

@@ -2204,7 +2204,20 @@ body {
     text-align: center; }
 
 .input-container {
-  margin-bottom: 20px; }
+  position: relative;
+}
+
+.clear-text {
+  font-size: 2em;
+  position: absolute;
+  left: 89%;
+  top: calc(50% - 16px);
+}
+
+.retype-text {
+  margin: 0;
+  height: 43px;
+}
 
 .text {
   display: inline-block;

@@ -26,11 +26,12 @@
 
     <div class="container" ng-controller="MainCtrl">
         <div class="main">
-            <h1>{{retypeText}}</h1>
             <div class="input-container">
                 <input type="text" ng-model="text" class="text" ng-keyup="$event.keyCode == 13 && speak()">
+                <i class="clear-text fa fa-times-circle-o" ng-click="clear()"></i>
                 <a href="#" ng-click="speak()" class="play__btn"><i class="fa fa-play-circle"></i></a>
             </div>
+            <h1 class="retype-text">{{retypeText}}</h1>
         </div>
         <div class="letters">
             <ul class="inline__list letters__list">

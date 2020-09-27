@@ -2,9 +2,10 @@
 
 angular.module('speech')
     .controller('MainCtrl',['$scope',function($scope){
-        $scope.text = 'Witaj!';
+        $scope.text = '';
         $scope.msg = new SpeechSynthesisUtterance();
         $scope.msg.lang = 'pl-PL';
+        $scope.msg.rate = 0.7;
         $scope.selectedIcon = -1;
         $scope.iconList = [
             {fa:'fa-car',text:'Samochód'},
@@ -44,8 +45,12 @@ angular.module('speech')
 
         $scope.selectLetter = function(index) {
             $scope.selectedLetter = index;
-            $scope.text = $scope.lettersList[index];
-            $scope.speak();
+            // $scope.text = $scope.lettersList[index];
+            $scope.speak($scope.lettersList[index]);
+        };
+
+        $scope.clear = function() {
+          $scope.text = '';
         };
 
         $scope.selectIco = function(index) {

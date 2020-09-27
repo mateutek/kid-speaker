@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179129233-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-179129233-1');
+    </script>
+
     <meta charset="UTF-8">
     <title>Speech</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- Piwik -->
-    <script type="text/javascript">
-        var _paq = _paq || [];
-        _paq.push(["setDomains", ["*.kid-speaker.mateutek.usermd.net"]]);
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function() {
-            var u="//stats6.mydevil.net/";
-            _paq.push(['setTrackerUrl', u+'piwik.php']);
-            _paq.push(['setSiteId', 159]);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-        })();
-    </script>
-    <noscript><p><img src="//stats6.mydevil.net/piwik.php?idsite=159" style="border:0;" alt="" /></p></noscript>
-    <!-- End Piwik Code -->
-
 </head>
 <body ng-app="speech">
 
@@ -31,12 +24,12 @@
                 <i class="clear-text fa fa-times-circle-o" ng-click="clear()"></i>
                 <a href="#" ng-click="speak()" class="play__btn"><i class="fa fa-play-circle"></i></a>
             </div>
-            <h1 class="retype-text">{{retypeText}}</h1>
+            <h1 class="retype-text">{{retypeText|uppercase}}</h1>
         </div>
         <div class="letters">
             <ul class="inline__list letters__list">
                 <li class="inline__list--item letter" ng-repeat="letter in lettersList" ng-click="selectLetter($index)" ng-class="{'active':$index==selectedLetter}">
-                   {{letter}} {{letter|uppercase}}
+                    {{letter|uppercase}} {{letter}}
                 </li>
             </ul>
         </div>
